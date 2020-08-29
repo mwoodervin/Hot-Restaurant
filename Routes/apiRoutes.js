@@ -1,13 +1,17 @@
-var path = require("path")
+var tableList = require("../data/Tablelist");
+var waitlist = require("../data/Waitlist");
 
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
-  });
-  
+module.exports = function(app) {
+
   app.get("/reservation", function(req, res) {
-    res.sendFile(path.join(__dirname, "reservation.html"));
+    res.json(waitlist)
   });
 
   app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
+    res.json(tableList)
   });
+
+    app.post("/api/tables", function (req,res) {
+    
+    });
+}
