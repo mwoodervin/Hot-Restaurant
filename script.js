@@ -20,6 +20,7 @@ function reserve() {
     };
 renderWait();
 renderTable();
+clear();
 }
 
 function renderTable(){
@@ -42,4 +43,10 @@ function renderWait(){
         $("#idDisp" + i).html(wait[i].id);
         
 }
+}
+
+function clear(){
+    $("#name" + i).html("");
+    $("#phone" + i).html("");
+    $("#id" + i).html("");
 }
