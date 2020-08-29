@@ -8,4 +8,4 @@ class Customer{
     }
 }
 
-module.exports("Customer");
+module.exports= Customer;
