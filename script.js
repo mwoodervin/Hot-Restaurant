@@ -52,3 +52,6 @@ function clear(){
     $("#reserve-email" + i).html("");
     $("#reserve-unique-id" + i).html("");
 }
+
+$("#submit-btn").on("click", function(){reserve();});
+
