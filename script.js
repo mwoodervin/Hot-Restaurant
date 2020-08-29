@@ -1,6 +1,6 @@
 const Customer = require("./customer");
-const wait = [];
-const table = [];
+const wait = require("./Waitlist");
+const table = require("./Tablelist")
 
 function waitlist(cust) { wait.push(cust); }
 
