@@ -9,8 +9,9 @@ function tablelist(cust) { table.push(cust); }
 function reserve() {
     const tempName = $("#reserve-name").val();
     const tempPhone = $("#reserve-phone").val();
+    const tempEmail = $("#reserve-email").val();
     const tempId = $("#reserve-unique-id").val();
-    const newCust = new Customer(tempName, tempPhone, tempId);
+    const newCust = new Customer(tempName, tempPhone, tempEmail, tempId);
 
     if (table.length > 4) {
         waitlist(newCust)
@@ -27,10 +28,10 @@ function renderTable(){
 
     for (i=0; i<table.length; i++) {
         
-        $("#nameDisp" + i).html(table[i].name);
-        $("#phoneDisp" + i).html(table[i].phone);
-        $("#idDisp" + i).html(table[i].id);
-        
+        const newDiv = $("<div>");
+        newDiv.append("<p> You are table number " + i + "<br> Name: " + table[i].name + "<br> Phone: " + table[i].phone + "<br> Email: " + table[i].email + "<br> ID: " + table[i].id +" </p><br>" )
+
+        $("#waitList").append(newDiv);
 }
 }
 
@@ -38,15 +39,16 @@ function renderWait(){
 
     for (i=0; i<wait.length; i++) {
         
-        $("#nameDisp" + i).html(wait[i].name);
-        $("#phoneDisp" + i).html(wait[i].phone);
-        $("#idDisp" + i).html(wait[i].id);
-        
+        const newDiv = $("<div>");
+        newDiv.append("<p> You are number " + i + "in line.<br> Name: " + wait[i].name + "<br> Phone: " + wait[i].phone + "<br> Email: " + wait[i].email + "<br> ID: " + wait[i].id +" </p><br>" )
+
+        $("#waitList").append(newDiv);
 }
 }
 
 function clear(){
-    $("#name" + i).html("");
-    $("#phone" + i).html("");
-    $("#id" + i).html("");
+    $("#reserve-name" + i).html("");
+    $("#reserve-phone" + i).html("");
+    $("#reserve-email" + i).html("");
+    $("#reserve-unique-id" + i).html("");
 }
