@@ -3,8 +3,8 @@
 var express = require("express");
 
 //Route Files
-require("./routes/")(app)
-require("./routes/")(app)
+require("./routes/apiRoutes")(app)
+require("./routes/htmldisplay")(app)
 
 // Sets up the Express App
 // =============================================================
