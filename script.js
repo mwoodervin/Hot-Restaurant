@@ -31,7 +31,7 @@ function renderTable(){
         const newDiv = $("<div>");
         newDiv.append("<p> You are table number " + i + "<br> Name: " + table[i].name + "<br> Phone: " + table[i].phone + "<br> Email: " + table[i].email + "<br> ID: " + table[i].id +" </p><br>" )
 
-        $("#waitList").append(newDiv);
+        $("#tableList").append(newDiv);
 }
 }
 
