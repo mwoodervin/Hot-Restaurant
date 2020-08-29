@@ -1,10 +1,11 @@
+
 const Customer = require("./customer");
 const wait = require("./Waitlist");
 const table = require("./Tablelist")
 
-function waitlist(cust) { wait.push(cust); }
+function waitlist(cust) { wait.push(cust);console.log(wait); }
 
-function tablelist(cust) { table.push(cust); }
+function tablelist(cust) { table.push(cust); console.log(table); }
 
 function reserve() {
     const tempName = $("#reserve-name").val();
@@ -19,8 +20,7 @@ function reserve() {
     else {
         tablelist(newCust)
     };
-renderWait();
-renderTable();
+
 clear();
 }
 
