@@ -30,17 +30,17 @@
     <div class="row">
       <div class="col-lg">
 
-   
+
         <div class="card">
           <div class="card-header">
             <h4>Current Reservations</h4>
           </div>
           <div class="card-body">
-            <ul id="tableList" ></ul>
+            <ul id="tableList"></ul>
           </div>
         </div>
 
-     
+
         <div class="card">
           <div class="card-header">
             <h4>Waiting List</h4>
@@ -54,17 +54,41 @@
 
 
     <footer class="footer mt-4">
-        <div class="container">
-            <p>Control Panel</p>
-            <p><a href="#" id="clear">Clear Table</a> | <a href="">API Table Link</a> | <a
-                    href="">API Wait List</a>
-        </div>
-</div>
-    </footer>
+      <div class="container">
+        <p>Control Panel</p>
+        <p><a href="#" id="clear">Clear Table</a> | <a href="">API Table Link</a> | <a href="">API Wait List</a>
+      </div>
+  </div>
+  </footer>
 
   </div>
 
 </body>
+<script type="text/javascript">
+  function runTableQuery() {
+    $.ajax({ url: "/api/tables", method: "GET" })
+      .then(function (tableData) {
+
+        console.log(tableData);
+        console.log("------------------------------------");
+
+        for (var i = 0; i < tableData.length; i++) {
+          var tableList = $("#tableList");
+          var listItem = $("<li class='list-group-item mt-4'>");
+
+          listItem.append(
+            $("<h2>").text("Table #" + (i + 1)),
+            $("<hr>"),
+            $("<h2>").text("ID: " + tableData[i].customerID),
+            $("<h2>").text("Name: " + tableData[i].customerName),
+            $("<h2>").text("Email: " + tableData[i].customerEmail),
+            $("<h2>").text("Phone: " + tableData[i].phoneNumber)
+          );
+
+          tableList.append(listItem);
+        }
+      });
+  }
+</script>
 
 </html>
-
