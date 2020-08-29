@@ -18,5 +18,28 @@ function reserve() {
     else {
         tablelist(newCust)
     };
+renderWait();
+renderTable();
+}
 
+function renderTable(){
+
+    for (i=0; i<table.length; i++) {
+        
+        $("#nameDisp" + i).html(table[i].name);
+        $("#phoneDisp" + i).html(table[i].phone);
+        $("#idDisp" + i).html(table[i].id);
+        
+}
+}
+
+function renderWait(){
+
+    for (i=0; i<wait.length; i++) {
+        
+        $("#nameDisp" + i).html(wait[i].name);
+        $("#phoneDisp" + i).html(wait[i].phone);
+        $("#idDisp" + i).html(wait[i].id);
+        
+}
 }
